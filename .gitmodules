@@ -1,0 +1,3 @@
+[submodule "midas-tari-haruhi"]
+	path = midas-tari-haruhi
+	url = https://github.com/firedial/midas-tari-haruhi

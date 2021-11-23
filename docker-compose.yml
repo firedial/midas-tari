@@ -2,13 +2,13 @@ version: '3.3'
 services:
     yui:
         build:
-            context: ./midas-tari-yui
+            context: ./yui
             dockerfile: Dockerfile
         restart: always 
-        env_file: ./midas-tari-yui/.db_environment.env
+        env_file: ./yui/.db_environment.env
         hostname: yui
         volumes:
-         - ./midas-yui:/app
+         - ./yui:/app
          - db:/var/lib/mysql
 volumes:
     db:

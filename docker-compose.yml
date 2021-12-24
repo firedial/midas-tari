@@ -20,6 +20,13 @@ services:
         volumes:
          - ./yui:/app
          - db:/var/lib/mysql
+    rikka:
+        build: ./rikka
+        env_file: ./rikka/.env
+        volumes:
+         - ./rikka:/home/root
+        privileged: true
+        tty: true
 volumes:
     db:
 

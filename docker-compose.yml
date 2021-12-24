@@ -1,5 +1,15 @@
 version: '3.3'
 services:
+    haruhi:
+        build:
+            context: ./haruhi
+            dockerfile: Dockerfile
+        ports:
+            - "3124:80"
+        hostname: haruhi
+        # command: npm run watch
+        volumes:
+            - ./haruhi:/var/www/html
     yui:
         build:
             context: ./yui

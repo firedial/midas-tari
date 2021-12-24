@@ -32,15 +32,15 @@ class AttributeCategoryTableSeeder extends Seeder
         for ($i = 2; $i <= 100; $i++) {
             KindCategory::create([
                 'name' => 'kind_c_name' . $i,
-                'description' => 'kind_c_description' . $i,
+                'description' => 'kind_c_desc' . $i,
             ]);
             PurposeCategory::create([
                 'name' => 'purpose_c_name' . $i,
-                'description' => 'purpose_c_description' . $i,
+                'description' => 'purpose_c_desc' . $i,
             ]);
             PlaceCategory::create([
                 'name' => 'place_c_name' . $i,
-                'description' => 'place_c_description' . $i,
+                'description' => 'place_c_desc' . $i,
             ]);
         }
     }

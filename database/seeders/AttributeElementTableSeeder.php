@@ -35,17 +35,17 @@ class AttributeElementTableSeeder extends Seeder
         for ($i = 2; $i <= 100; $i++) {
             KindElement::create([
                 'name' => 'kind_e_name' . $i,
-                'description' => 'kind_e_description' . $i,
+                'description' => 'kind_e_desc' . $i,
                 'category_id' => $i,
             ]);
             PurposeElement::create([
                 'name' => 'purpose_e_name' . $i,
-                'description' => 'purpose_e_description' . $i,
+                'description' => 'purpose_e_desc' . $i,
                 'category_id' => $i,
             ]);
             PlaceElement::create([
                 'name' => 'place_e_name' . $i,
-                'description' => 'place_e_description' . $i,
+                'description' => 'place_e_desc' . $i,
                 'category_id' => $i,
             ]);
         }

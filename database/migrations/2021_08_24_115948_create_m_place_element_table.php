@@ -17,7 +17,7 @@ class CreateMPlaceElementTable extends Migration
             $table->id();
             $table->string('name', 20)->unique();
             $table->string('description', 20);
-            $table->string('category_id');
+            $table->foreignId('category_id');
             $table->timestamps();
 
             $table->foreign('category_id')

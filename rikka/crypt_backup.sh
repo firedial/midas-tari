@@ -5,7 +5,7 @@ BACKUP_FILE_NAME="backup.dump"
 gzip /tmp/${BACKUP_FILE_NAME}
 BACKUP_GZIP_FILE_NAME=${BACKUP_FILE_NAME}.gz
 
-openssl aes-256-cbc -e -pbkdf2 -iter 100000 -salt -in /tmp/${BACKUP_GZIP_FILE_NAME} -out /tmp/encrypted_${BACKUP_GZIP_FILE_NAME} -pass file:pass.txt
+openssl aes-256-cbc -e -pbkdf2 -iter 100000 -salt -in /tmp/${BACKUP_GZIP_FILE_NAME} -out /tmp/encrypted_${BACKUP_GZIP_FILE_NAME} -pass file:.encryption_key
 
 rm /tmp/${BACKUP_GZIP_FILE_NAME}
 

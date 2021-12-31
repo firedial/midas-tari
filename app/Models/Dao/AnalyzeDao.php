@@ -66,8 +66,8 @@ class AnalyzeDao
             $query->groupBy('m_balance.date');
         } else if ($params['label'] === 'all') {
             $query->addSelect(
-                '1 as label_id',
-                'data as label_description'
+                DB::raw('1 as label_id'),
+                DB::raw('"data" as label_description')
             );
             $query->groupBy('m_balance.date');
         }
@@ -99,8 +99,8 @@ class AnalyzeDao
             $query->groupBy('m_balance.date');
         } else if ($params['dataset'] === 'all') {
             $query->addSelect(
-                '1 as dataset_id',
-                'data as dataset_description'
+                DB::raw('1 as dataset_id'),
+                DB::raw('"data" as dataset_description')
             );
         }
 

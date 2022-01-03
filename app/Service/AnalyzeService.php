@@ -6,7 +6,7 @@ use App\Models\KindElement;
 use App\Models\Dao\AnalyzeDao;
 
 /**
- * balance テーブルの解析用の Dao
+ * balance テーブルの解析用のサービスクラス
  */
 class AnalyzeService
 {

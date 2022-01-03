@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Balance;
 use App\Models\KindElement;
+use App\Service\BalanceService;
 
 class BalanceController extends Controller
 {
@@ -46,7 +47,7 @@ class BalanceController extends Controller
 
     public function store(Request $request)
     {
-        return Balance::create($request->all());
+        return BalanceService::createBalance(self::getBalance($request));
     }
 
     public function update(Request $request, Balance $balance)
@@ -55,10 +56,21 @@ class BalanceController extends Controller
         return $balance;
     }
 
-    public function destroy(Balance $balance)
+    public function destroy(Balance $balance): boolean
     {
-        $balance->delete();
+        return BalanceService::deleteBalance($balance);
+    }
 
+    private static function getBalance(Request $request): Balance
+    {
+        $balance = new Balance();
+        $balance->id = $request->id === null ? null : (int)$request->id;
+        $balance->amount = (int)$request->amount;
+        $balance->item = (string)$request->item;
+        $balance->kind_element_id = (int)$request->kind_element_id;
+        $balance->purpose_element_id = (int)$request->purpose_element_id;
+        $balance->place_element_id = (int)$request->place_element_id;
+        $balance->date = (string)$request->date;
         return $balance;
     }
 }

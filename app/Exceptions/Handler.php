@@ -3,7 +3,9 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Request;
 use Throwable;
+use App\Exceptions\InvalidParameterException;
 
 class Handler extends ExceptionHandler
 {
@@ -36,6 +38,18 @@ class Handler extends ExceptionHandler
     {
         $this->reportable(function (Throwable $e) {
             //
+        });
+
+        $this->renderable(function (Throwable $e, Request $request) {
+            if ($e instanceof InvalidParameterException) {
+                return response()->json([
+                    'message' => $e->getMessage()
+                ], 400);
+            } else {
+                return response()->json([
+                    'message' => $e->getMessage()
+                ], 500);
+            }
         });
     }
 }

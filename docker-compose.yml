@@ -15,7 +15,7 @@ services:
             context: ./yui
             dockerfile: Dockerfile
         restart: always 
-        env_file: ./yui/.db_environment.env
+        env_file: ./yui/.env
         hostname: yui
         volumes:
          - ./yui:/app

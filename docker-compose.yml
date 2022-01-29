@@ -18,7 +18,6 @@ services:
         env_file: ./yui/.env
         hostname: yui
         volumes:
-         - ./yui:/app
          - db:/var/lib/mysql
     rikka:
         build: ./rikka

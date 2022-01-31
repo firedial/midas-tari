@@ -17,6 +17,7 @@ docker compose up -d
 
 docker compose exec haruhi bash
 php artisan key:generate
+composer install
 npm run dev
 ```
 

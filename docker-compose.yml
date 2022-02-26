@@ -10,6 +10,16 @@ services:
         # command: npm run watch
         volumes:
             - ./haruhi:/var/www/html
+    eru:
+        build:
+            context: ./eru
+            dockerfile: Dockerfile
+        environment:
+            - MB_DB_FILE=/metabase-data/metabase.db
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./eru:/metabase-data
     yui:
         build:
             context: ./yui

@@ -19,7 +19,7 @@ services:
         ports:
             - "3000:3000"
         volumes:
-            - ./eru:/metabase-data
+            - ./eru/metabase:/metabase-data
     yui:
         build:
             context: ./yui

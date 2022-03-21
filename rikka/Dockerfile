@@ -10,10 +10,5 @@ RUN apk add mariadb-dev && \
     apk add curl && \
     apk add openssl
 
-RUN adduser -D appuser
-RUN mkdir /mnt/nas && \
-    chown appuser:appuser /mnt/nas
-
-USER appuser
-WORKDIR /home/appuser
+RUN mkdir /mnt/nas
 

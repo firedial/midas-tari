@@ -33,7 +33,7 @@ services:
         build: ./rikka
         env_file: ./rikka/.env
         volumes:
-         - ./rikka:/home/appuser
+         - ./rikka:/home/root
         privileged: true
         tty: true
 volumes:

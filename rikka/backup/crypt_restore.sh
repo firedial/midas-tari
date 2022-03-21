@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BACKUP_DIR="/tmp/nas"
+BACKUP_DIR="/tmp/nas/midas/crypt"
 ENCRYPTED_BACKUP_FILE_NAME=$(ls -r1 ${BACKUP_DIR} | head -n 1)
 
 openssl aes-256-cbc -d -pbkdf2 -iter 100000 -salt -in ${BACKUP_DIR}/${ENCRYPTED_BACKUP_FILE_NAME} -out /tmp/restore.dump.gz -pass file:.encryption_key

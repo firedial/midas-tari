@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BACKUP_FILE_NAME="backup.dump"
-BACKUP_DIR="/tmp/nas"
+BACKUP_DIR="/tmp/nas/midas/crypt"
 
 /usr/bin/mysqldump --no-tablespaces --single-transaction -u ${DB_MIDAS_BACKUP_USER} -p${DB_MIDAS_BACKUP_PASS} -h ${DB_HOST} ${DB_DATABASE_NAME} > /tmp/${BACKUP_FILE_NAME}
 gzip /tmp/${BACKUP_FILE_NAME}
